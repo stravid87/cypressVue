@@ -1,0 +1,17 @@
+name: Containers Experiment
+
+on:
+  workflow_dispatch:
+  push:
+    branches: main
+
+jobs:
+  job-container:
+    runs-on: ubuntu-latest
+    container: node:lts-alpine # The container this job will run in?
+
+  services:
+    layer8:
+      image: stravid87/layer8-server:latest
+    wgp:
+      image: stravid87/wgp_mock_backend:latest
