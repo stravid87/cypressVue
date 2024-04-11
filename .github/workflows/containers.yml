@@ -9,9 +9,14 @@ jobs:
   job-container:
     runs-on: ubuntu-latest
     container: node:lts-alpine # The container this job will run in?
-
-  services:
-    layer8:
-      image: stravid87/layer8-server:latest
-    wgp:
-      image: stravid87/wgp_mock_backend:latest
+    services:
+      layer8:
+        image: stravid87/layer8-server:latest
+      wgp:
+        image: stravid87/wgp_mock_backend:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: "Echo check"
+        run: echo "G-lunch time?"
+    
