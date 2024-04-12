@@ -19,6 +19,8 @@ jobs:
         with:
           component: true
           browser: chrome
+      - name: Echo Test
+        run: echo "nice..."
 
   services:
     layer8:
