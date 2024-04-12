@@ -12,10 +12,13 @@ describe('<HelloWorld />', () => {
     cy.get('#check-tunnel-btn')
   })
 
-  it('opens the tunnel', () => {
+  it('Checks for WASM persistence', () => {
     // see: https://on.cypress.io/mounting-vue
     // cy.mount(HelloWorld)
     cy.get('#layer8-persistence-check-btn').click()
+    cy.get('#layer8-persistence-check-btn').click()
+    cy.get('#layer8-persistence-check-btn').click()
+    cy.get('#layer8-persistence-check-btn').contains('persistence check @ 3')
   })
 
   it('sends a post request through the tunnel', () => {
