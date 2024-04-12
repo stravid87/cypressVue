@@ -1,4 +1,4 @@
-name: Containers Experiment
+name: E2E Container Experiment
 
 on:
   workflow_dispatch:
@@ -6,12 +6,26 @@ on:
     branches: main
 
 jobs:
-  job-container:
+  cypress-run:
     runs-on: ubuntu-latest
-    container: node:lts-alpine # The container this job will run in?
+    container:
+      image: cypress/browsers:latest
+      options: --user 1001
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          component: true
+          browser: chrome
 
   services:
     layer8:
       image: stravid87/layer8-server:latest
     wgp:
       image: stravid87/wgp_mock_backend:latest
+
+  # load-l8-containers:
+  #   runs-on: ubuntu-latest
+  #   container: node:lts-alpine # The container this job will run in?
