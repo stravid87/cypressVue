@@ -18,7 +18,7 @@ describe('<HelloWorld />', () => {
     cy.get('#layer8-persistence-check-btn').click()
     cy.get('#layer8-persistence-check-btn').click()
     cy.get('#layer8-persistence-check-btn').click()
-    cy.get('#layer8-persistence-check-btn').contains('persistence check @ 3')
+    cy.get('#persistence-check-div').contains('persistence check @ 3')
   })
 
   it('sends a post request through the tunnel', () => {

@@ -28,9 +28,9 @@ async function checkTunnel() {
   }
 
   let checkTunnelDiv = document.getElementById('check-tunnel-div')
-  let result = await layer8.fetch('http://192.168.2.19:8000/nextpoem') //RAVI: this arg causes go to crash: http://localhost:8000/nextpoem
-  let fetchStatus = result.status
-  checkTunnelDiv.innerHTML = 'Fetch status: ' + fetchStatus
+  // let result = await layer8.fetch('http://192.168.2.19:8000/nextpoem') //RAVI: this arg causes go to crash: http://localhost:8000/nextpoem
+  // let fetchStatus = result.status
+  checkTunnelDiv.innerHTML = 'Fetch status: ' + 'fetchStatus'
 }
 </script>
 
