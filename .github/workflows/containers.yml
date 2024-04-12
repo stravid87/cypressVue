@@ -11,6 +11,11 @@ jobs:
     container:
       image: cypress/browsers:latest
       options: --user 1001
+    services:
+      layer8:
+        image: stravid87/layer8-server:latest
+      wgp:
+        image: stravid87/wgp_mock_backend:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -24,12 +29,7 @@ jobs:
       - name: Echo Test
         run: echo "nice..."
 
-  # services:
-  #   runs-on: ubuntu-latest
-  #   layer8:
-  #     image: stravid87/layer8-server:latest
-  #   wgp:
-  #     image: stravid87/wgp_mock_backend:latest
+
 
   # load-l8-containers:
   #   runs-on: ubuntu-latest
