@@ -18,7 +18,7 @@ async function checkTunnel() {
   try {
     await layer8.initEncryptedTunnel(
       {
-        providers: ['http://192.168.2.19:8000'],
+        providers: ['http://127.0.0.1:8000'],
         proxy: 'http://127.0.0.1:5001' // works
       },
       'dev'
