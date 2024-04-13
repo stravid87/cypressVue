@@ -28,7 +28,8 @@ jobs:
         with:
           component: true
           browser: chrome
-          wait-on: 'http://localhost:8000, http://localhost:5001'
+          wait-on: 'http://wgp:8000, http://layer8:5001'
+          wait-on-timeout: 30
           
       - name: run testing
         run: npm test:e2e:dev
