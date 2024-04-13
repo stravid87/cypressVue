@@ -8,9 +8,9 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    container:
-      image: cypress/browsers:latest
-      options: --user 1001
+    # container:
+    #   image: cypress/browsers:latest
+    #   options: --user 1001
     services:
       layer8:
         image: stravid87/layer8-server:latest
@@ -28,7 +28,7 @@ jobs:
         with:
           component: true
           browser: chrome
-          wait-on: 'http://wgp:8000, http://layer8:5001'
+          wait-on: 'http://localhost:8000, http://localhost:5001'
           wait-on-timeout: 30
           
       - name: run testing
