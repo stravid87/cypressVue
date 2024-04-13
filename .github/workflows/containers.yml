@@ -21,6 +21,7 @@ jobs:
         ports:
           - 8000:8000
     steps:
+      - run: sudo apt-get install curl
       - name: Checkout
         uses: actions/checkout@v2
       - name: Cypress run
