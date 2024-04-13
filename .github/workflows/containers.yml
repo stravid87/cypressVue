@@ -28,6 +28,8 @@ jobs:
         with:
           component: true
           browser: chrome
+          wait-on: 'http://localhost:8000, http://localhost:5001'
+          
       - name: run testing
         run: npm test:e2e:dev
       - name: Echo Test
