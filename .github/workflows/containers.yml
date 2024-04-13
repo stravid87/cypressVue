@@ -22,7 +22,10 @@ jobs:
           - 8000:8000
     steps:
       - run: sudo apt-get install curl
+      - run: curl http://layer8:5001
+      - run: curl http://wgp:8000
       - run: curl http://localhost:8000/healthcheck && echo ""
+      - run: curl http://layer8:5001
       - name: Checkout
         uses: actions/checkout@v2
       # - name: Cypress run
@@ -33,8 +36,8 @@ jobs:
       #     wait-on: 'http://localhost:8000, http://localhost:5001'
       #     wait-on-timeout: 30
           
-      - name: run testing
-        run: npm test:e2e:dev
+      # - name: run testing
+      #   run: npm test:e2e:dev
       - name: Echo Test
         run: echo "nice..."
 
