@@ -14,13 +14,15 @@ jobs:
     services:
       layer8:
         image: stravid87/layer8-server:latest
+        ports: 
+          - 5001:5001
       wgp:
         image: stravid87/wgp_mock_backend:latest
+        ports:
+          - 8000:8000
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: ss -tupln
-        run: ss -tupln
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
