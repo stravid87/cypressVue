@@ -22,7 +22,8 @@ jobs:
           - 8000:8000
     steps:
       - run: sudo apt-get install curl
-      - run: curl wgp/healthcheck && echo ""
+      - run: ss -tulpn
+      #- run: curl wgp/healthcheck && echo ""
       # - run: curl http://layer8:5001
       - name: Checkout
         uses: actions/checkout@v2
