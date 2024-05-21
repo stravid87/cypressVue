@@ -88,3 +88,5 @@ Action list to test with the interceptor:
 2) Upload of image works
 3) Reload leads to instant reload (demonstrating proper caching)
 4) Clicking the newly loaded image shows it in a light box
+
+Dis shoud tirggra
